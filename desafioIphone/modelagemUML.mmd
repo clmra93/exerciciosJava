@@ -1,28 +1,28 @@
 classDiagram
     direction LR
 
-    interface ReprodutorMusical {
+    class ReprodutorMusical {
         <<Interface>>
         +tocar(): void
         +pausar(): void
         +selecionarMusica(musica: String): void
     }
 
-    interface AparelhoTelefonico {
+    class AparelhoTelefonico {
         <<Interface>>
         +ligar(numero: String): void
         +atender(): void
         +iniciarCorreioVoz(): void
     }
 
-    interface NavegadorInternet {
+    class NavegadorInternet {
         <<Interface>>
         +exibirPagina(url: String): void
         +adicionarNovaAba(): void
         +atualizarPagina(): void
     }
 
-    class iPhone implements ReprodutorMusical, AparelhoTelefonico, NavegadorInternet {
+    class iPhone {
         +tocar(): void
         +pausar(): void
         +selecionarMusica(musica: String): void
@@ -33,3 +33,7 @@ classDiagram
         +adicionarNovaAba(): void
         +atualizarPagina(): void
     }
+
+    iPhone ..|> ReprodutorMusical
+    iPhone ..|> AparelhoTelefonico
+    iPhone ..|> NavegadorInternet
