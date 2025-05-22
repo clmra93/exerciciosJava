@@ -1,0 +1,35 @@
+classDiagram
+    direction LR
+
+    interface ReprodutorMusical {
+        <<Interface>>
+        +tocar(): void
+        +pausar(): void
+        +selecionarMusica(musica: String): void
+    }
+
+    interface AparelhoTelefonico {
+        <<Interface>>
+        +ligar(numero: String): void
+        +atender(): void
+        +iniciarCorreioVoz(): void
+    }
+
+    interface NavegadorInternet {
+        <<Interface>>
+        +exibirPagina(url: String): void
+        +adicionarNovaAba(): void
+        +atualizarPagina(): void
+    }
+
+    class iPhone implements ReprodutorMusical, AparelhoTelefonico, NavegadorInternet {
+        +tocar(): void
+        +pausar(): void
+        +selecionarMusica(musica: String): void
+        +ligar(numero: String): void
+        +atender(): void
+        +iniciarCorreioVoz(): void
+        +exibirPagina(url: String): void
+        +adicionarNovaAba(): void
+        +atualizarPagina(): void
+    }
